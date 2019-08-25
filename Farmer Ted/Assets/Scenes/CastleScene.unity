@@ -149,10 +149,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749ed5cb4699c2e45938911e883aa42e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Characters: []
   SelectedCharacter: {fileID: 0}
   CharacterPrefab: {fileID: 4410580942336781622, guid: 1560b006bf7067a49bc478590de70b15,
     type: 3}
-  startingCharacters: 2
+  startingCharacters: 4
 --- !u!4 &634562524
 Transform:
   m_ObjectHideFlags: 0

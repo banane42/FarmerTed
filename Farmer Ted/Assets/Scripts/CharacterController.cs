@@ -18,14 +18,6 @@ public class CharacterController : MonoBehaviour
 
     }
 
-    private void Start() {
-
-        if (GameController.gc.SelectedCharacter == this.gameObject) {
-            isSelected = true;
-        }
-
-    }
-
     private void Update() {
 
         if (isSelected) {
@@ -48,11 +40,22 @@ public class CharacterController : MonoBehaviour
             if (Input.GetKey(KeyCode.D)) {
                 transform.position = transform.position + Vector3.right * Time.deltaTime * speed;
             }
+            //Next character button released
+            if (Input.GetKeyUp(KeyCode.E)) {
 
+                GameController.gc.NextCharacter();
+
+            }
+            //Prev character button released
+            if (Input.GetKeyUp(KeyCode.Q)) {
+
+                GameController.gc.PrevCharacter();
+
+            }
         }
         else {
 
-            //Character allows its AI to control it
+            //Character allows it's AI to control it
 
         }
 
