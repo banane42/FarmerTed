@@ -153,7 +153,7 @@ MonoBehaviour:
   SelectedCharacter: {fileID: 0}
   CharacterPrefab: {fileID: 4410580942336781622, guid: 1560b006bf7067a49bc478590de70b15,
     type: 3}
-  startingCharacters: 4
+  startingCharacters: 5
 --- !u!4 &634562524
 Transform:
   m_ObjectHideFlags: 0
