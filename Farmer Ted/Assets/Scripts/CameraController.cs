@@ -13,9 +13,12 @@ public class CameraController : MonoBehaviour
 
         if (GameController.gc.SelectedCharacter != null) {
 
-            Vector3 targetObject = new Vector3(GameController.gc.SelectedCharacter.transform.position.x, GameController.gc.SelectedCharacter.transform.position.y, -10f);
+            Vector3 targetObject = new Vector3(GameController.gc.SelectedCharacter.transform.position.x , GameController.gc.SelectedCharacter.transform.position.y , -10f);
             transform.position = Vector3.Lerp(transform.position , targetObject , speed * Time.deltaTime);
 
+        }
+        else {
+            transform.position = Vector3.Lerp(transform.position , new Vector3(0f,0f, -10f) , speed * Time.deltaTime);
         }
 
     }

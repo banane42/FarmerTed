@@ -31,14 +31,19 @@ public class GameController : MonoBehaviour
 
         }
 
+    }
+
+    private void Start() {
+
         SelectCharacter(0);
 
     }
-    
+
     //Selects the next Character in the list
     public void NextCharacter() {
 
-        print("Next Character");
+        //print("Next Character");
+        SelectedCharacter.isSelected = false;
         SelectCharacter(characterIndex + 1);
 
     }
@@ -46,18 +51,31 @@ public class GameController : MonoBehaviour
     //Selects the previous character in the list
     public void PrevCharacter() {
 
-        print("Prev Character");
+        //print("Prev Character");
+        SelectedCharacter.isSelected = false;
         SelectCharacter(characterIndex - 1);
 
     }
 
+    //IEnumerator waitABit() {
+        //yield return new WaitForSecondsRealtime(0.15f);
+    //}
+
     void SelectCharacter(int newIndex) {
 
         if (SelectedCharacter == null) {
-            SelectedCharacter = Characters[0];
+
+            if (newIndex < 0 || newIndex >= Characters.Count) {
+                throw new System.ArgumentException("newIndex cannot be outside the bounds of Characters");
+            }
+
+            characterIndex = newIndex;
+            SelectedCharacter = Characters[newIndex];
             SelectedCharacter.isSelected = true;
         }
         else {
+
+            //SelectedCharacter.isSelected = false;
 
             if (newIndex < 0) {
                 characterIndex = Characters.Count - 1;
@@ -71,7 +89,8 @@ public class GameController : MonoBehaviour
 
             //print("Selected: " + characterIndex);
 
-            SelectedCharacter.isSelected = false;
+            //StartCoroutine(waitABit());
+
             SelectedCharacter = Characters[characterIndex];
             SelectedCharacter.isSelected = true;
 

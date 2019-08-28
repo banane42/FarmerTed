@@ -16,6 +16,8 @@ public class CharacterController : MonoBehaviour
 
         spriteRederer.color = new Color(Random.value, Random.value, Random.value);
 
+        isSelected = false;
+
     }
 
     private void Update() {
@@ -43,12 +45,14 @@ public class CharacterController : MonoBehaviour
             //Next character button released
             if (Input.GetKeyUp(KeyCode.E)) {
 
+                print("Next character button released");
                 GameController.gc.NextCharacter();
 
             }
             //Prev character button released
             if (Input.GetKeyUp(KeyCode.Q)) {
 
+                print("Prev character button released");
                 GameController.gc.PrevCharacter();
 
             }
