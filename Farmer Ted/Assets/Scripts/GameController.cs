@@ -39,10 +39,27 @@ public class GameController : MonoBehaviour
 
     }
 
+    private void Update() {
+
+        //Next character button released
+        if (Input.GetKeyUp(KeyCode.E)) {
+
+            NextCharacter();
+
+        }
+        //Prev character button released
+        if (Input.GetKeyUp(KeyCode.Q)) {
+
+            PrevCharacter();
+
+        }
+
+    }
+
     //Selects the next Character in the list
     public void NextCharacter() {
 
-        //print("Next Character");
+        print("Next Character");
         SelectedCharacter.isSelected = false;
         SelectCharacter(characterIndex + 1);
 
@@ -51,7 +68,7 @@ public class GameController : MonoBehaviour
     //Selects the previous character in the list
     public void PrevCharacter() {
 
-        //print("Prev Character");
+        print("Prev Character");
         SelectedCharacter.isSelected = false;
         SelectCharacter(characterIndex - 1);
 

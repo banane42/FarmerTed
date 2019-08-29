@@ -42,20 +42,20 @@ public class CharacterController : MonoBehaviour
             if (Input.GetKey(KeyCode.D)) {
                 transform.position = transform.position + Vector3.right * Time.deltaTime * speed;
             }
-            //Next character button released
-            if (Input.GetKeyUp(KeyCode.E)) {
+            ////Next character button released
+            //if (Input.GetKeyUp(KeyCode.E)) {
 
-                print("Next character button released");
-                GameController.gc.NextCharacter();
+            //    //print("Next character button released");
+            //    GameController.gc.NextCharacter();
 
-            }
-            //Prev character button released
-            if (Input.GetKeyUp(KeyCode.Q)) {
+            //}
+            ////Prev character button released
+            //if (Input.GetKeyUp(KeyCode.Q)) {
 
-                print("Prev character button released");
-                GameController.gc.PrevCharacter();
+            //    //print("Prev character button released");
+            //    GameController.gc.PrevCharacter();
 
-            }
+            //}
         }
         else {
 
